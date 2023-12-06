@@ -11,7 +11,6 @@ def tspAprox(matrix):
                 min_weight = matrix[i][j]
                 selected_vertex = j      
     
-    
     visited[selected_vertex] = True
 
    # print(min_weight, selected_vertex)

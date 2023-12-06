@@ -1,7 +1,5 @@
 from scipy.optimize import linear_sum_assignment
-from prim import prim as PRIM
-#import view as VW
-#import tsp 
+from util.prim import prim as PRIM
 import copy 
 import time
 
@@ -116,12 +114,7 @@ def odd_degree(matrix):
 def find_eulerian_tour(matrix):
 
         matrix = transform_matrix(matrix)
-        mst, last_vertex, mst_matrix = PRIM(matrix)
-        
-        #VW.create_final_view(mst_matrix)
-        #total = [0]
-        #mst.pre_order(total)
-        
+        mst_matrix = PRIM(matrix)
         matrix_zeros, matrix_inf = odds_matrixes(mst_matrix, matrix)
         min_matching = min_perfect_matching(matrix_zeros, matrix_inf)
 
