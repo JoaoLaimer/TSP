@@ -10,6 +10,7 @@
 <h3> Imports usados: </h3>
     
     ```python
+        pip install scipy
         from scipy.optimize import linear_sum_assignment
         from util.prim import prim as PRIM
         import copy 
