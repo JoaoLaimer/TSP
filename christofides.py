@@ -53,7 +53,6 @@ def print_matrix(matrix):
             print(matrix[i][j], end=" ")
         print()
 
-
 def transform_matrix(matrix):
     for i in range(len(matrix)):
         for j in range(len(matrix[i])):
@@ -118,7 +117,6 @@ def find_eulerian_tour(matrix):
         matrix_zeros, matrix_inf = odds_matrixes(mst_matrix, matrix)
         min_matching = min_perfect_matching(matrix_zeros, matrix_inf)
 
-
         T = unify_matrix(min_matching, mst_matrix)
         is_connected_T = is_connected(T)
 
@@ -126,10 +124,9 @@ def find_eulerian_tour(matrix):
             
             H, W = hierholzer(T)
             HM = build_matrix(H)
-            peso = compare_matrix(matrix, HM)
-            print(peso)
+            print(compare_matrix(matrix, HM))
         else:
-            print("deu ruim")
+            print("Não é possível encontrar um caminho euleriano")
 
 def compare_matrix(matrix1, matrix2):
     weight = 0
@@ -138,7 +135,6 @@ def compare_matrix(matrix1, matrix2):
             if i > j and matrix2[i][j] != 0:
                 weight += matrix1[i][j]
     return weight
-
 
 def hierholzer(matrix, start = 0):
     temp_matrix = copy.deepcopy(matrix)
@@ -193,10 +189,9 @@ def read_file(path):
 path = ["arquivos tsp\\tsp1_253.txt", "arquivos tsp\\tsp2_1248.txt", "arquivos tsp\\tsp3_1194.txt", "arquivos tsp\\tsp4_7013.txt", "arquivos tsp\\tsp5_27603.txt"]
 if __name__ == "__main__":
     start = time.time()
-    matrix = read_file(path[4])
-    matrix = transform_matrix(matrix)
+
+    matrix = read_file(path[1])
     find_eulerian_tour(matrix)
 
     end_time = time.time() - start
-
     print(f"Runtime: {end_time} seconds")

@@ -21,7 +21,6 @@ def tsp(graph, start = 0):
         current_pathweight += graph[k][start] 
         min_path = min(min_path, current_pathweight) 
         
-    
     return min_path 
 
 def read_file(path):
@@ -38,11 +37,10 @@ def read_file(path):
     return matrix
 
 path = ["arquivos tsp\\tsp1_253.txt", "arquivos tsp\\tsp2_1248.txt", "arquivos tsp\\tsp3_1194.txt", "arquivos tsp\\tsp4_7013.txt", "arquivos tsp\\tsp5_27603.txt"]
+if __name__ == "__main__":
+    matrix = read_file(path[1])
 
-matrix = read_file(path[1])
-
-start = time.time()
-print(tsp(matrix))
-end_time = time.time() - start
-
-print(f"Runtime: {end_time} seconds")
+    start = time.time()
+    print(tsp(matrix))
+    end_time = time.time() - start
+    print(f"Runtime: {end_time} seconds")
