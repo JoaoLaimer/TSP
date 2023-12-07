@@ -4,7 +4,7 @@
 <h3> Alunos: </h3>
 <ul>
   <li> João Vitor Laimer - 21200682 </li>
-  <li>  </li>
+  <li> Vinicius Hallmann - 21201044</li>
 </ul>
 
 <h3> Imports usados: </h3>
